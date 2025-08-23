@@ -25,7 +25,6 @@ void updateithbit(int &n, int i, int v) {
     int mask = (v << i);
     n = n | mask;
 }
-    
 
 // to clear last ith bits 
 void clearlastibits(int &n, int i) { // the mask should be bound of all the last ith bits count  
@@ -41,6 +40,8 @@ void clearrangeofbits(int &n, int i, int j) {
     int mask = a | b; // this will create the mask for the range of bits 
     n = n & mask; // this will clear out the range of bits          
 }
+
+
 
 int main() {
     int n, i; 
