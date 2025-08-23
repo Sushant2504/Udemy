@@ -27,10 +27,23 @@ void updateithbit(int &n, int i, int v) {
 }
     
 
-// to clear 
+// to clear last ith bits 
+void clearlastibits(int &n, int i) { // the mask should be bound of all the last ith bits count  
+    int mask = (-1 << i);
+    n = n & mask; // this will clear out the the last 0 <-> 1 pairs 
+}
+
+
+// to clear the range of bits from i to j
+void clearrangeofbits(int &n, int i, int j) {
+    int a = (-1 << (j + 1)); // this will create the mask for the left part 
+    int b = (1 << i) - 1; // this will create the mask for the right part 
+    int mask = a | b; // this will create the mask for the range of bits 
+    n = n & mask; // this will clear out the range of bits          
+}
 
 int main() {
-    int n, i;
+    int n, i; 
     cin >> n >> i;
 
     cout << getithbit(n, i) << endl;  
